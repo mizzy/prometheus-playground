@@ -1,0 +1,30 @@
+region: ap-northeast-1
+metrics:
+ - aws_namespace: AWS/EC2
+   aws_metric_name: CPUCreditBalance
+   aws_dimensions: [InstanceId]
+   aws_statistics: [Average]
+ - aws_namespace: AWS/EC2
+   aws_metric_name: CPUCreditUsage
+   aws_dimensions: [InstanceId]
+   aws_statistics: [Average]
+ - aws_namespace: AWS/EC2
+   aws_metric_name: StatusCheckFailed
+   aws_dimensions: [InstanceId]
+   aws_statistics: [Maximum]
+ - aws_namespace: AWS/EC2
+   aws_metric_name: StatusCheckFailed_Instance
+   aws_dimensions: [InstanceId]
+   aws_statistics: [Maximum]
+ - aws_namespace: AWS/EC2
+   aws_metric_name: StatusCheckFailed_System
+   aws_dimensions: [InstanceId]
+   aws_statistics: [Maximum]
+ - aws_namespace: AWS/EC2
+   aws_metric_name: BurstBalance
+   aws_dimensions: [InstanceId]
+   aws_statistics: [Average]
+ - aws_namespace: AWS/EC2
+   aws_metric_name: CPUUtilization
+   aws_dimensions: [InstanceId]
+   aws_statistics: [Average]

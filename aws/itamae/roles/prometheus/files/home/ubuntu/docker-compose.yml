@@ -1,0 +1,31 @@
+version: '3'
+services:
+  prometheus:
+    container_name: prometheus
+    image: prom/prometheus:v2.0.0
+    volumes:
+      - /home/ubuntu/prometheus.yml:/etc/prometheus/prometheus.yml
+    ports:
+      - 9090:9090
+    networks:
+      - my_network
+  grafana:
+    container_name: grafana
+    image: grafana/grafana:4.6.2
+    ports:
+      - 3000:3000
+    networks:
+      - my_network
+  cloudwatch-exporter-ec2:
+    image: prom/cloudwatch-exporter:latest
+    container_name: cloudwatch-exporter-ec2
+    ports:
+      - 9106:9106
+    volumes:
+      - /home/ubuntu/exporter_cloudwatch_ec2.yml:/config/config.yml
+    networks:
+      - my_network      
+
+networks:
+  my_network:
+    driver: bridge
