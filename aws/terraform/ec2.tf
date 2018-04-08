@@ -4,7 +4,12 @@ resource "aws_instance" "prometheus-001" {
   key_name = "aws_mizzy"
   security_groups = ["all"]
   iam_instance_profile = "${aws_iam_instance_profile.prometheus.name}"
+
   tags {
     Name = "prometheus-001"
+  }
+
+  root_block_device {
+    volume_size = "100"
   }
 }

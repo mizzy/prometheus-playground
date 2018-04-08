@@ -32,6 +32,8 @@ resource "aws_iam_role_policy" "cloudwatch_read_only" {
         {
             "Action": [
                 "autoscaling:Describe*",
+                "ec2:DescribeInstances",
+                "ec2:DescribeTags",
                 "cloudwatch:Describe*",
                 "cloudwatch:Get*",
                 "cloudwatch:List*",
