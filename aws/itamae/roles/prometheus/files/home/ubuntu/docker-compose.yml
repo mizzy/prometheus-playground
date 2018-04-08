@@ -19,7 +19,7 @@ services:
     networks:
       - my_network      
   technofy-cloudwatch-exporter:
-    image: mizzy/cloudwatch_exporter:latest
+    image: mizzy/technofy-cloudwatch-exporter:latest
     container_name: technofy-cloudwatch-exporter
     ports:
       - 9042:9042
@@ -27,14 +27,13 @@ services:
       - /home/ubuntu/cloudwatch_exporter_config.yml:/etc/cloudwatch_exporter/config.yml
     networks:
       - my_network      
-
-  #grafana:
-  #  container_name: grafana
-  #  image: grafana/grafana:4.6.2
-  #  ports:
-  #    - 3000:3000
-  #  networks:
-  #    - my_network
+  grafana:
+    container_name: grafana
+    image: grafana/grafana:4.6.2
+    ports:
+      - 3000:3000
+    networks:
+      - my_network
 
 networks:
   my_network:
