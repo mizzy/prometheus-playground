@@ -8,7 +8,8 @@ end
 %w[
     /home/ubuntu/docker-compose.yml
     /home/ubuntu/prometheus.yml
-    /home/ubuntu/exporter_cloudwatch_ec2.yml
+    /home/ubuntu/cloudwatch_exporter.yml
+    /home/ubuntu/cloudwatch_exporter_config.yml
 ].each do |file|
   remote_file file do
     mode '0644'

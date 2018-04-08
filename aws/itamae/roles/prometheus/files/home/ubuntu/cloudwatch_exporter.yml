@@ -28,3 +28,7 @@ metrics:
    aws_metric_name: CPUUtilization
    aws_dimensions: [InstanceId]
    aws_statistics: [Average]
+ - aws_namespace: AWS/Billing
+   aws_metric_name: EstimatedCharges
+   aws_dimensions: [ServiceName, Currency]
+   aws_statistics: [Sum]
