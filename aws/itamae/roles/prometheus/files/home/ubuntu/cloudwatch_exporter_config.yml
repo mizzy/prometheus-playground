@@ -3,11 +3,9 @@ tasks:
    default_region: ap-northeast-1
    metrics:
     - aws_namespace: "AWS/Billing"
-      aws_dimensions: [Currency]
-      aws_dimensions_select:
-        Currency: [USD]
+      aws_dimensions: [ServiceName, Currency]
       aws_metric_name: EstimatedCharges
-      aws_statistics: [Maximum]
+      aws_statistics: [Sum]
       range_seconds: 86400
 
  - name: ec2_cloudwatch
