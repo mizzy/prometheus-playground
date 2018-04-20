@@ -1,7 +1,7 @@
 tasks:
  - name: billing
    metrics:
-    - aws_namespace: "AWS/Billing"
+    - aws_namespace: AWS/Billing
       aws_dimensions: [ServiceName, Currency]
       aws_metric_name: EstimatedCharges
       aws_statistics: [Sum]

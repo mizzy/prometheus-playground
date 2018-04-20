@@ -10,6 +10,7 @@ end
     /home/ubuntu/prometheus.yml
     /home/ubuntu/cloudwatch_exporter.yml
     /home/ubuntu/cloudwatch_exporter_config.yml
+    /home/ubuntu/elb_config.yml
 ].each do |file|
   remote_file file do
     mode '0644'

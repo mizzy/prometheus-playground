@@ -31,3 +31,10 @@ scrape_configs:
         replacement: 'technofy-cloudwatch-exporter:9042'
       - source_labels: [__meta_ec2_tag_Name]
         target_label: name
+  - job_name: 'elb_cloudwatch'
+    metrics_path: '/scrape'
+    params:
+      task: [elb_cloudwatch]
+      region: [ap-northeast-1]
+    static_configs:
+      - targets: ['technofy-cloudwatch-exporter-elb:9042']
