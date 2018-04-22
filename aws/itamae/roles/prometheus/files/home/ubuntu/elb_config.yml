@@ -9,11 +9,11 @@ tasks:
      - aws_namespace: AWS/ELB
        aws_metric_name: HealthyHostCount
        aws_dimensions: [LoadBalancerName, AvailabilityZone]
-       aws_statistics: [Maximum]
+       aws_statistics: [Minimum]
      - aws_namespace: AWS/ELB
        aws_metric_name: HealthyHostCount
        aws_dimensions: [LoadBalancerName, AvailabilityZone]
-       aws_statistics: [Minimum]
+       aws_statistics: [Maximum]
      - aws_namespace: AWS/ELB
        aws_metric_name: HealthyHostCount
        aws_dimensions: [LoadBalancerName, AvailabilityZone]
@@ -21,11 +21,11 @@ tasks:
      - aws_namespace: AWS/ELB
        aws_metric_name: UnHealthyHostCount
        aws_dimensions: [LoadBalancerName, AvailabilityZone]
-       aws_statistics: [Maximum]
+       aws_statistics: [Minimum]
      - aws_namespace: AWS/ELB
        aws_metric_name: UnHealthyHostCount
        aws_dimensions: [LoadBalancerName, AvailabilityZone]
-       aws_statistics: [Minimum]
+       aws_statistics: [Maximum]
      - aws_namespace: AWS/ELB
        aws_metric_name: UnHealthyHostCount
        aws_dimensions: [LoadBalancerName, AvailabilityZone]
@@ -57,7 +57,15 @@ tasks:
      - aws_namespace: AWS/ELB
        aws_metric_name: Latency
        aws_dimensions: [LoadBalancerName, AvailabilityZone]
-       aws_statistics: [Minimum, Maximum, Average]
+       aws_statistics: [Minimum]
+     - aws_namespace: AWS/ELB
+       aws_metric_name: Latency
+       aws_dimensions: [LoadBalancerName, AvailabilityZone]
+       aws_statistics: [Maximum]
+     - aws_namespace: AWS/ELB
+       aws_metric_name: Latency
+       aws_dimensions: [LoadBalancerName, AvailabilityZone]
+       aws_statistics: [Average]
      - aws_namespace: AWS/ELB
        aws_metric_name: BackendConnectionErrors
        aws_dimensions: [LoadBalancerName, AvailabilityZone]
@@ -69,49 +77,65 @@ tasks:
 
      - aws_namespace: AWS/ApplicationELB
        aws_metric_name: RequestCount
-       aws_dimensions: [AvailabilityZone, LoadBalancer, TargetGroup]
+       aws_dimensions: [TargetGroup, LoadBalancer, AvailabilityZone]
        aws_statistics: [Sum]
      - aws_namespace: AWS/ApplicationELB
        aws_metric_name: HealthyHostCount
        aws_dimensions: [TargetGroup, LoadBalancer, AvailabilityZone]
        aws_statistics: [Minimum]
      - aws_namespace: AWS/ApplicationELB
+       aws_metric_name: HealthyHostCount
+       aws_dimensions: [TargetGroup, LoadBalancer, AvailabilityZone]
+       aws_statistics: [Maximum]
+     - aws_namespace: AWS/ApplicationELB
+       aws_metric_name: HealthyHostCount
+       aws_dimensions: [TargetGroup, LoadBalancer, AvailabilityZone]
+       aws_statistics: [Average]
+     - aws_namespace: AWS/ApplicationELB
        aws_metric_name: UnHealthyHostCount
        aws_dimensions: [TargetGroup, LoadBalancer, AvailabilityZone]
        aws_statistics: [Minimum]
      - aws_namespace: AWS/ApplicationELB
+       aws_metric_name: UnHealthyHostCount
+       aws_dimensions: [TargetGroup, LoadBalancer, AvailabilityZone]
+       aws_statistics: [Maximum]
+     - aws_namespace: AWS/ApplicationELB
+       aws_metric_name: UnHealthyHostCount
+       aws_dimensions: [TargetGroup, LoadBalancer, AvailabilityZone]
+       aws_statistics: [Average]
+     - aws_namespace: AWS/ApplicationELB
        aws_metric_name: HTTPCode_Target_2XX_Count
-       aws_dimensions: [AvailabilityZone, LoadBalancer, TargetGroup]
+       aws_dimensions: [TargetGroup, LoadBalancer, AvailabilityZone]
        aws_statistics: [Sum]
      - aws_namespace: AWS/ApplicationELB
        aws_metric_name: HTTPCode_Target_3XX_Count
-       aws_dimensions: [AvailabilityZone, LoadBalancer, TargetGroup]
+       aws_dimensions: [TargetGroup, LoadBalancer, AvailabilityZone]
        aws_statistics: [Sum]
      - aws_namespace: AWS/ApplicationELB
        aws_metric_name: HTTPCode_Target_4XX_Count
-       aws_dimensions: [AvailabilityZone, LoadBalancer, TargetGroup]
+       aws_dimensions: [TargetGroup, LoadBalancer, AvailabilityZone]
        aws_statistics: [Sum]
      - aws_namespace: AWS/ApplicationELB
        aws_metric_name: HTTPCode_Target_5XX_Count
-       aws_dimensions: [AvailabilityZone, LoadBalancer, TargetGroup]
+       aws_dimensions: [TargetGroup, LoadBalancer, AvailabilityZone]
        aws_statistics: [Sum]
      - aws_namespace: AWS/ApplicationELB
        aws_metric_name: HTTPCode_ELB_4XX_Count
-       aws_dimensions: [AvailabilityZone, LoadBalancer, TargetGroup]
+       aws_dimensions: [TargetGroup, LoadBalancer, AvailabilityZone]
        aws_statistics: [Sum]
      - aws_namespace: AWS/ApplicationELB
        aws_metric_name: HTTPCode_ELB_5XX_Count
-       aws_dimensions: [AvailabilityZone, LoadBalancer, TargetGroup]
+       aws_dimensions: [TargetGroup, LoadBalancer, AvailabilityZone]
        aws_statistics: [Sum]
      - aws_namespace: AWS/ApplicationELB
        aws_metric_name: TargetResponseTime
-       aws_dimensions: [AvailabilityZone, LoadBalancer, TargetGroup]
+       aws_dimensions: [TargetGroup, LoadBalancer, AvailabilityZone]
        aws_statistics: [Average]
      - aws_namespace: AWS/ApplicationELB
        aws_metric_name: RejectedConnectionCount
-       aws_dimensions: [AvailabilityZone, LoadBalancer, TargetGroup]
+       aws_dimensions: [TargetGroup, LoadBalancer, AvailabilityZone]
        aws_statistics: [Sum]
      - aws_namespace: AWS/ApplicationELB
        aws_metric_name: TargetConnectionErrorCount
-       aws_dimensions: [AvailabilityZone, LoadBalancer, TargetGroup]
+       aws_dimensions: [TargetGroup, LoadBalancer, AvailabilityZone]
        aws_statistics: [Sum]
