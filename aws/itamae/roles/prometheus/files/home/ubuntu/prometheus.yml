@@ -7,10 +7,10 @@ scrape_configs:
     static_configs:
       - targets:
         - 'prometheus:9090'
-  - job_name: 'cloudwatch-exporter'
-    static_configs:
-      - targets:
-        - 'cloudwatch-exporter:9106'
+#  - job_name: 'cloudwatch-exporter'
+#    static_configs:
+#      - targets:
+#        - 'cloudwatch-exporter:9106'
   - job_name: 'aws_billing'
     metrics_path: '/scrape'
     params:

@@ -9,38 +9,54 @@ tasks:
      - aws_namespace: AWS/ELB
        aws_metric_name: HealthyHostCount
        aws_dimensions: [LoadBalancerName, AvailabilityZone]
+       aws_statistics: [Maximum]
+     - aws_namespace: AWS/ELB
+       aws_metric_name: HealthyHostCount
+       aws_dimensions: [LoadBalancerName, AvailabilityZone]
+       aws_statistics: [Minimum]
+     - aws_namespace: AWS/ELB
+       aws_metric_name: HealthyHostCount
+       aws_dimensions: [LoadBalancerName, AvailabilityZone]
        aws_statistics: [Average]
-     #- aws_namespace: AWS/ELB
-     #  aws_metric_name: UnHealthyHostCount
-     #  aws_dimensions: [AvailabilityZone, LoadBalancerName]
-     #  aws_statistics: [Minimum, Maximum, Average]
+     - aws_namespace: AWS/ELB
+       aws_metric_name: UnHealthyHostCount
+       aws_dimensions: [LoadBalancerName, AvailabilityZone]
+       aws_statistics: [Maximum]
+     - aws_namespace: AWS/ELB
+       aws_metric_name: UnHealthyHostCount
+       aws_dimensions: [LoadBalancerName, AvailabilityZone]
+       aws_statistics: [Minimum]
+     - aws_namespace: AWS/ELB
+       aws_metric_name: UnHealthyHostCount
+       aws_dimensions: [LoadBalancerName, AvailabilityZone]
+       aws_statistics: [Average]
      - aws_namespace: AWS/ELB
        aws_metric_name: HTTPCode_Backend_2XX
        aws_dimensions: [LoadBalancerName, AvailabilityZone]
        aws_statistics: [Sum]
      - aws_namespace: AWS/ELB
        aws_metric_name: HTTPCode_Backend_3XX
-       aws_dimensions: [AvailabilityZone, LoadBalancerName]
+       aws_dimensions: [LoadBalancerName, AvailabilityZone]
        aws_statistics: [Sum]
      - aws_namespace: AWS/ELB
        aws_metric_name: HTTPCode_Backend_4XX
-       aws_dimensions: [AvailabilityZone, LoadBalancerName]
+       aws_dimensions: [LoadBalancerName, AvailabilityZone]
        aws_statistics: [Sum]
      - aws_namespace: AWS/ELB
        aws_metric_name: HTTPCode_Backend_5XX
-       aws_dimensions: [AvailabilityZone, LoadBalancerName]
+       aws_dimensions: [LoadBalancerName, AvailabilityZone]
        aws_statistics: [Sum]
      - aws_namespace: AWS/ELB
        aws_metric_name: HTTPCode_ELB_4XX
-       aws_dimensions: [AvailabilityZone, LoadBalancerName]
+       aws_dimensions: [LoadBalancerName, AvailabilityZone]
        aws_statistics: [Sum]
      - aws_namespace: AWS/ELB
        aws_metric_name: HTTPCode_ELB_5XX
-       aws_dimensions: [AvailabilityZone, LoadBalancerName]
+       aws_dimensions: [LoadBalancerName, AvailabilityZone]
        aws_statistics: [Sum]
      - aws_namespace: AWS/ELB
        aws_metric_name: Latency
-       aws_dimensions: [AvailabilityZone, LoadBalancerName]
+       aws_dimensions: [LoadBalancerName, AvailabilityZone]
        aws_statistics: [Minimum, Maximum, Average]
      - aws_namespace: AWS/ELB
        aws_metric_name: BackendConnectionErrors
@@ -48,7 +64,7 @@ tasks:
        aws_statistics: [Sum]
      - aws_namespace: AWS/ELB
        aws_metric_name: SpilloverCount
-       aws_dimensions: [AvailabilityZone, LoadBalancerName]
+       aws_dimensions: [LoadBalancerName, AvailabilityZone]
        aws_statistics: [Sum]
 
      - aws_namespace: AWS/ApplicationELB
@@ -57,12 +73,12 @@ tasks:
        aws_statistics: [Sum]
      - aws_namespace: AWS/ApplicationELB
        aws_metric_name: HealthyHostCount
-       aws_dimensions: [AvailabilityZone, LoadBalancer, TargetGroup]
-       aws_statistics: [Minimum, Maximum, Average]
+       aws_dimensions: [TargetGroup, LoadBalancer, AvailabilityZone]
+       aws_statistics: [Minimum]
      - aws_namespace: AWS/ApplicationELB
        aws_metric_name: UnHealthyHostCount
-       aws_dimensions: [AvailabilityZone, LoadBalancer, TargetGroup]
-       aws_statistics: [Minimum, Maximum, Average]
+       aws_dimensions: [TargetGroup, LoadBalancer, AvailabilityZone]
+       aws_statistics: [Minimum]
      - aws_namespace: AWS/ApplicationELB
        aws_metric_name: HTTPCode_Target_2XX_Count
        aws_dimensions: [AvailabilityZone, LoadBalancer, TargetGroup]
