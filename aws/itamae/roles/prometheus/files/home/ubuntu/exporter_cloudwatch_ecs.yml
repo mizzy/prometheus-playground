@@ -1,0 +1,20 @@
+tasks:
+ - name: ecs_cloudwatch
+   default_region: ap-northeast-1
+   metrics:
+     - aws_namespace: AWS/ECS
+       aws_metric_name: CPUReservation
+       aws_dimensions: [ClusterName, ServiceName]
+       aws_statistics: [Minimum, Maximum, Average]
+     - aws_namespace: AWS/ECS
+       aws_metric_name: CPUUtilization
+       aws_dimensions: [ClusterName, ServiceName]
+       aws_statistics: [Minimum, Maximum, Average]
+     - aws_namespace: AWS/ECS
+       aws_metric_name: MemoryReservation
+       aws_dimensions: [ClusterName, ServiceName]
+       aws_statistics: [Minimum, Maximum, Average]
+     - aws_namespace: AWS/ECS
+       aws_metric_name: MemoryUtilization
+       aws_dimensions: [ClusterName, ServiceName]
+       aws_statistics: [Minimum, Maximum, Average]

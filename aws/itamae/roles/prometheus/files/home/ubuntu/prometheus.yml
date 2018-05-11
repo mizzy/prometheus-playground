@@ -17,7 +17,7 @@ scrape_configs:
       task: [billing]
       region: [us-east-1]
     static_configs:
-      - targets: ['technofy-cloudwatch-exporter:9042']
+      - targets: ['cloudwatch-exporter-ec2:9042']
   - job_name: 'ec2_cloudwatch'
     metrics_path: '/scrape'
     ec2_sd_configs:
@@ -28,7 +28,7 @@ scrape_configs:
       - source_labels: [__meta_ec2_instance_id]
         target_label: __param_target
       - target_label: __address__
-        replacement: 'technofy-cloudwatch-exporter:9042'
+        replacement: 'cloudwatch-exporter-ec2:9042'
       - source_labels: [__meta_ec2_tag_Name]
         target_label: name
   - job_name: 'elb_cloudwatch'
@@ -37,4 +37,11 @@ scrape_configs:
       task: [elb_cloudwatch]
       region: [ap-northeast-1]
     static_configs:
-      - targets: ['technofy-cloudwatch-exporter-elb:9042']
+      - targets: ['cloudwatch-exporter-elb:9042']
+  - job_name: 'ecs_cloudwatch'
+    metrics_path: '/scrape'
+    params:
+      task: [ecs_cloudwatch]
+      region: [ap-northeast-1]
+    static_configs:
+      - targets: ['cloudwatch-exporter-ecs:9042']

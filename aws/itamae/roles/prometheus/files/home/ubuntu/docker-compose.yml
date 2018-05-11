@@ -9,31 +9,31 @@ services:
       - 9090:9090
     networks:
       - my_network
-#  cloudwatch-exporter:
-#    image: prom/cloudwatch-exporter:latest
-#    container_name: cloudwatch-exporter
-#    ports:
-#      - 9106:9106
-#    volumes:
-#      - /home/ubuntu/cloudwatch_exporter.yml:/config/config.yml
-#    networks:
-#      - my_network      
-  technofy-cloudwatch-exporter:
+  cloudwatch-exporter-ec2:
     image: mizzy/technofy-cloudwatch-exporter:latest
-    container_name: technofy-cloudwatch-exporter
+    container_name: cloudwatch-exporter-ec2
     ports:
       - 9042:9042
     volumes:
-      - /home/ubuntu/cloudwatch_exporter_config.yml:/etc/cloudwatch_exporter/config.yml
+      - /home/ubuntu/exporter_cloudwatch_ec2.yml:/etc/cloudwatch_exporter/config.yml
     networks:
       - my_network
   cloudwatch-exporter-elb:
     image: mizzy/technofy-cloudwatch-exporter:latest
-    container_name: technofy-cloudwatch-exporter-elb
+    container_name: cloudwatch-exporter-elb
     ports:
       - 9043:9042
     volumes:
-      - /home/ubuntu/elb_config.yml:/etc/cloudwatch_exporter/config.yml
+      - /home/ubuntu/exporter_cloudwatch_elb.yml:/etc/cloudwatch_exporter/config.yml
+    networks:
+      - my_network
+  cloudwatch-exporter-ecs:
+    image: mizzy/technofy-cloudwatch-exporter:latest
+    container_name: cloudwatch-exporter-ecs
+    ports:
+      - 9044:9042
+    volumes:
+      - /home/ubuntu/exporter_cloudwatch_ecs.yml:/etc/cloudwatch_exporter/config.yml
     networks:
       - my_network
  # grafana:
