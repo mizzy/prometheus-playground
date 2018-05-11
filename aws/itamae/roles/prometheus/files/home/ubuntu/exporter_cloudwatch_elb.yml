@@ -1,5 +1,5 @@
 tasks:
- - name: elb_cloudwatch
+ - name: elb
    default_region: ap-northeast-1
    metrics:
      - aws_namespace: AWS/ELB

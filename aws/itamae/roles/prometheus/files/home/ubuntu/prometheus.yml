@@ -20,11 +20,11 @@ scrape_configs:
       - targets: ['cloudwatch-exporter-ec2:9042']
   - job_name: 'ec2_cloudwatch'
     metrics_path: '/scrape'
+    params:
+      task: [ec2]
     ec2_sd_configs:
       - region: ap-northeast-1
     relabel_configs:
-      - source_labels: [job]
-        target_label: __param_task
       - source_labels: [__meta_ec2_instance_id]
         target_label: __param_target
       - target_label: __address__
@@ -34,14 +34,14 @@ scrape_configs:
   - job_name: 'elb_cloudwatch'
     metrics_path: '/scrape'
     params:
-      task: [elb_cloudwatch]
+      task: [elb]
       region: [ap-northeast-1]
     static_configs:
       - targets: ['cloudwatch-exporter-elb:9042']
   - job_name: 'ecs_cloudwatch'
     metrics_path: '/scrape'
     params:
-      task: [ecs_cloudwatch]
+      task: [ecs]
       region: [ap-northeast-1]
     static_configs:
       - targets: ['cloudwatch-exporter-ecs:9042']
