@@ -26,3 +26,11 @@ tasks:
        aws_metric_name: MemoryUtilization
        aws_dimensions: [ServiceName, ClusterName]
        aws_statistics: [Minimum]
+     - aws_namespace: AWS/ECS
+       aws_metric_name: MemoryUtilization
+       aws_dimensions: [ServiceName, ClusterName]
+       aws_statistics: [Maximum]
+     - aws_namespace: AWS/ECS
+       aws_metric_name: MemoryUtilization
+       aws_dimensions: [ServiceName, ClusterName]
+       aws_statistics: [Average]
