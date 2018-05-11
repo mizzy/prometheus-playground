@@ -8,7 +8,7 @@ tasks:
        aws_statistics: [Minimum, Maximum, Average]
      - aws_namespace: AWS/ECS
        aws_metric_name: CPUUtilization
-       aws_dimensions: [ClusterName, ServiceName]
+       aws_dimensions: [ServiceName, ClusterName]
        aws_statistics: [Minimum, Maximum, Average]
      - aws_namespace: AWS/ECS
        aws_metric_name: MemoryReservation
