@@ -17,8 +17,9 @@ scrape_configs:
       task: [billing]
       region: [us-east-1]
     static_configs:
-      - targets: ['cloudwatch-exporter-ec2:9042']
-  - job_name: 'ec2_cloudwatch'
+      - targets:
+          - 'cloudwatch-exporter-ec2:9042'
+  - job_name: 'cloudwatch-exporter-ec2'
     metrics_path: '/scrape'
     params:
       task: [ec2]
@@ -31,24 +32,24 @@ scrape_configs:
         replacement: 'cloudwatch-exporter-ec2:9042'
       - source_labels: [__meta_ec2_tag_Name]
         target_label: name
-  - job_name: 'elb_cloudwatch'
+  - job_name: 'cloudwatch-exporter-elb'
     metrics_path: '/scrape'
     params:
       task: [elb]
-      region: [ap-northeast-1]
     static_configs:
-      - targets: ['cloudwatch-exporter-elb:9042']
-  - job_name: 'ecs_cloudwatch'
+      - targets:
+          - 'cloudwatch-exporter-elb:9042'
+  - job_name: 'cloudwatch-exporter-ecs'
     metrics_path: '/scrape'
     params:
       task: [ecs]
-      region: [ap-northeast-1]
     static_configs:
-      - targets: ['cloudwatch-exporter-ecs:9042']
-  - job_name: 'rds_cloudwatch'
+      - targets:
+          - 'cloudwatch-exporter-ecs:9042'
+  - job_name: 'cloudwatch-exporter-rds'
     metrics_path: '/scrape'
     params:
       task: [rds]
-      region: [ap-northeast-1]
     static_configs:
-      - targets: ['cloudwatch-exporter-rds:9042']
+      - targets:
+          - 'cloudwatch-exporter-rds:9042'
