@@ -17,3 +17,14 @@ end
     mode '0644'
   end
 end
+
+remote_file '/etc/systemd/system/prometheus.service' do
+  owner 'ubuntu'
+  group 'ubuntu'
+  mode '644'
+end
+
+service 'prometheus' do
+  action [:enable, :restart]
+  user 'root'
+end
