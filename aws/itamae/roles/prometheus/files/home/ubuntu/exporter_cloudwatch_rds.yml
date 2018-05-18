@@ -1,0 +1,48 @@
+tasks:
+ - name: rds
+   default_region: ap-northeast-1
+   metrics:
+     - aws_namespace: AWS/RDS
+       aws_metric_name: CPUUtilization
+       aws_dimensions: [DBInstanceIdentifier]
+       aws_statistics: [Minimum, Maximum, Average]
+     - aws_namespace: AWS/RDS
+       aws_metric_name: DatabaseConnections
+       aws_dimensions: [DBInstanceIdentifier]
+       aws_statistics: [Minimum, Maximum, Average]
+     - aws_namespace: AWS/RDS
+       aws_metric_name: ReplicaLag
+       aws_dimensions: [DBInstanceIdentifier]
+       aws_statistics: [Minimum, Maximum, Average]
+     - aws_namespace: AWS/RDS
+       aws_metric_name: AuroraReplicaLag
+       aws_dimensions: [DBInstanceIdentifier]
+       aws_statistics: [Minimum, Maximum, Average]
+     - aws_namespace: AWS/RDS
+       aws_metric_name: AuroraReplicaLagMaximum
+       aws_dimensions: [DBInstanceIdentifier]
+       aws_statistics: [Minimum, Maximum, Average]
+     - aws_namespace: AWS/RDS
+       aws_metric_name: AuroraReplicaLagMinimum
+       aws_dimensions: [DBInstanceIdentifier]
+       aws_statistics: [Minimum, Maximum, Average]
+     - aws_namespace: AWS/RDS
+       aws_metric_name: ReadIOPS
+       aws_dimensions: [DBInstanceIdentifier]
+       aws_statistics: [Minimum, Maximum, Average]
+     - aws_namespace: AWS/RDS
+       aws_metric_name: WriteIOPS
+       aws_dimensions: [DBInstanceIdentifier]
+       aws_statistics: [Minimum, Maximum, Average]
+     - aws_namespace: AWS/RDS
+       aws_metric_name: FreeStorageSpace
+       aws_dimensions: [DBInstanceIdentifier]
+       aws_statistics: [Minimum, Maximum, Average]
+     - aws_namespace: AWS/RDS
+       aws_metric_name: FreeableMemory
+       aws_dimensions: [DBInstanceIdentifier]
+       aws_statistics: [Minimum, Maximum, Average]
+     - aws_namespace: AWS/RDS
+       aws_metric_name: SwapUsage
+       aws_dimensions: [DBInstanceIdentifier]
+       aws_statistics: [Minimum, Maximum, Average]

@@ -1,4 +1,4 @@
-
+/*
 resource "aws_lb" "alb0" {
   name = "alb0"
   subnets = ["subnet-b4d130dc", "subnet-4d542565"]
@@ -15,3 +15,4 @@ resource "aws_lb_target_group" "test" {
   protocol = "HTTP"
   vpc_id   = "vpc-b3d130db"
 }
+*/

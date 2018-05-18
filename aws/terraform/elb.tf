@@ -1,3 +1,4 @@
+/*
 resource "aws_elb" "elb0" {
   name = "elb0"
   
@@ -27,3 +28,4 @@ resource "aws_elb" "elb1" {
 
   availability_zones = ["ap-northeast-1a"]
 }
+*/

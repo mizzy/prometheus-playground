@@ -45,3 +45,10 @@ scrape_configs:
       region: [ap-northeast-1]
     static_configs:
       - targets: ['cloudwatch-exporter-ecs:9042']
+  - job_name: 'rds_cloudwatch'
+    metrics_path: '/scrape'
+    params:
+      task: [rds]
+      region: [ap-northeast-1]
+    static_configs:
+      - targets: ['cloudwatch-exporter-rds:9042']

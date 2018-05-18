@@ -14,6 +14,7 @@ resource "aws_instance" "prometheus-001" {
   }
 }
 
+/*
 resource "aws_instance" "prometheus-002" {
   ami = "ami-0d74386b"
   instance_type = "t2.medium"
@@ -29,3 +30,4 @@ resource "aws_instance" "prometheus-002" {
     volume_size = "100"
   }
 }
+*/
