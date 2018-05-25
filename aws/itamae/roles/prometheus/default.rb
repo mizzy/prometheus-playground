@@ -12,6 +12,7 @@ end
     /home/ubuntu/exporter_cloudwatch_elb.yml
     /home/ubuntu/exporter_cloudwatch_ecs.yml
     /home/ubuntu/exporter_cloudwatch_rds.yml
+    /home/ubuntu/exporter_cloudwatch_es.yml
 ].each do |file|
   remote_file file do
     mode '0644'

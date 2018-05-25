@@ -53,3 +53,10 @@ scrape_configs:
     static_configs:
       - targets:
           - 'cloudwatch-exporter-rds:9042'
+  - job_name: 'cloudwatch-exporter-es'
+    metrics_path: '/scrape'
+    params:
+      task: [es]
+    static_configs:
+      - targets:
+          - 'cloudwatch-exporter-es:9042'

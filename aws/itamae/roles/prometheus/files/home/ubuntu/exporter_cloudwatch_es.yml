@@ -1,0 +1,64 @@
+tasks:
+ - name: es
+   default_region: ap-northeast-1
+   metrics:
+     - aws_namespace: AWS/ES
+       aws_metric_name: ClusterStatus.yellow
+       aws_dimensions: [ClientId, DomainName]
+       aws_statistics: [Minimum, Maximum]
+     - aws_namespace: AWS/ES
+       aws_metric_name: ClusterStatus.red
+       aws_dimensions: [ClientId, DomainName]
+       aws_statistics: [Minimum, Maximum]
+     - aws_namespace: AWS/ES
+       aws_metric_name: SearchableDocuments
+       aws_dimensions: [ClientId, DomainName]
+       aws_statistics: [Minimum, Maximum, Average]
+     - aws_namespace: AWS/ES
+       aws_metric_name: CPUUtilization
+       aws_dimensions: [ClientId, DomainName]
+       aws_statistics: [Maximum, Average]
+     - aws_namespace: AWS/ES
+       aws_metric_name: FreeStorageSpace
+       aws_dimensions: [ClientId, DomainName]
+       aws_statistics: [Minimum]
+     - aws_namespace: AWS/ES
+       aws_metric_name: ClusterUsedSpace
+       aws_dimensions: [ClientId, DomainName]
+       aws_statistics: [Minimum, Maximum]
+     - aws_namespace: AWS/ES
+       aws_metric_name: ClusterIndexWritesBlocked
+       aws_dimensions: [ClientId, DomainName]
+       aws_statistics: [Maximum]
+     - aws_namespace: AWS/ES
+       aws_metric_name: JVMMemoryPressure
+       aws_dimensions: [ClientId, DomainName]
+       aws_statistics: [Maximum]
+     - aws_namespace: AWS/ES
+       aws_metric_name: AutomatedSnapshotFailure
+       aws_dimensions: [ClientId, DomainName]
+       aws_statistics: [Minimum, Maximum]
+     - aws_namespace: AWS/ES
+       aws_metric_name: CPUCreditBalance
+       aws_dimensions: [ClientId, DomainName]
+       aws_statistics: [Minimum]
+     - aws_namespace: AWS/ES
+       aws_metric_name: KibanaHealthyNodes
+       aws_dimensions: [ClientId, DomainName]
+       aws_statistics: [Minimum]
+     - aws_namespace: AWS/ES
+       aws_metric_name: MasterCPUUtilization
+       aws_dimensions: [ClientId, DomainName]
+       aws_statistics: [Average]
+     - aws_namespace: AWS/ES
+       aws_metric_name: MasterJVMMemoryPressure
+       aws_dimensions: [ClientId, DomainName]
+       aws_statistics: [Maximum]
+     - aws_namespace: AWS/ES
+       aws_metric_name: MasterCPUCreditBalance
+       aws_dimensions: [ClientId, DomainName]
+       aws_statistics: [Minimum]
+     - aws_namespace: AWS/ES
+       aws_metric_name: MasterReachableFromNode
+       aws_dimensions: [ClientId, DomainName]
+       aws_statistics: [Minimum]
