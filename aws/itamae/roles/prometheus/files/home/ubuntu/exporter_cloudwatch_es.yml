@@ -45,7 +45,11 @@ tasks:
      - aws_namespace: AWS/ES
        aws_metric_name: ClusterUsedSpace
        aws_dimensions: [DomainName, ClientId]
-       aws_statistics: [Minimum, Maximum]
+       aws_statistics: [Minimum]
+     - aws_namespace: AWS/ES
+       aws_metric_name: ClusterUsedSpace
+       aws_dimensions: [DomainName, ClientId]
+       aws_statistics: [Maximum]
      - aws_namespace: AWS/ES
        aws_metric_name: ClusterIndexWritesBlocked
        aws_dimensions: [DomainName, ClientId]
@@ -57,7 +61,11 @@ tasks:
      - aws_namespace: AWS/ES
        aws_metric_name: AutomatedSnapshotFailure
        aws_dimensions: [DomainName, ClientId]
-       aws_statistics: [Minimum, Maximum]
+       aws_statistics: [Minimum]
+     - aws_namespace: AWS/ES
+       aws_metric_name: AutomatedSnapshotFailure
+       aws_dimensions: [DomainName, ClientId]
+       aws_statistics: [Maximum]
      - aws_namespace: AWS/ES
        aws_metric_name: CPUCreditBalance
        aws_dimensions: [DomainName, ClientId]
