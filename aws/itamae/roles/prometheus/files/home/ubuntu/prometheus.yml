@@ -60,3 +60,16 @@ scrape_configs:
     static_configs:
       - targets:
           - 'cloudwatch-exporter-es:9042'
+  - job_name: 'cloudwatch-exporter-system_linux'
+    metrics_path: '/scrape'
+    params:
+      task: [system_linux]
+    ec2_sd_configs:
+      - region: ap-northeast-1
+    relabel_configs:
+      - source_labels: [__meta_ec2_instance_id]
+        target_label: __param_target
+      - target_label: __address__
+        replacement: 'cloudwatch-exporter-system_linux:9042'
+      - source_labels: [__meta_ec2_tag_Name]
+        target_label: name

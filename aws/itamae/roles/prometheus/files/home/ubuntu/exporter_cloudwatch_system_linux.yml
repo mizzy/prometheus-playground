@@ -1,0 +1,35 @@
+tasks:
+ - name: system_linux
+   default_region: ap-northeast-1
+   metrics:
+    - aws_namespace: System/Linux
+      aws_metric_name: MemoryUtilization
+      aws_dimensions: [InstanceId]
+      aws_dimensions_select:
+        InstanceId: [$_target]
+      aws_statistics: [Average]
+    - aws_namespace: System/Linux
+      aws_metric_name: MemoryUsed
+      aws_dimensions: [InstanceId]
+      aws_dimensions_select:
+        InstanceId: [$_target]
+      aws_statistics: [Average]
+    - aws_namespace: System/Linux
+      aws_metric_name: MemoryAvailable
+      aws_dimensions: [InstanceId]
+      aws_dimensions_select:
+        InstanceId: [$_target]
+      aws_statistics: [Maximum]
+    - aws_namespace: System/Linux
+      aws_metric_name: SwapUsed
+      aws_dimensions: [InstanceId]
+      aws_dimensions_select:
+        InstanceId: [$_target]
+      aws_statistics: [Maximum]
+    - aws_namespace: System/Linux
+      aws_metric_name: SwapUtilization
+      aws_dimensions: [InstanceId]
+      aws_dimensions_select:
+        InstanceId: [$_target]
+      aws_statistics: [Maximum]
+      
