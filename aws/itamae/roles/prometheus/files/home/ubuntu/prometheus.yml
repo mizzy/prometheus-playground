@@ -73,3 +73,6 @@ scrape_configs:
         replacement: 'cloudwatch-exporter-system_linux:9042'
       - source_labels: [__meta_ec2_tag_Name]
         target_label: name
+      - source_labels: [__meta_ec2_tag_Name]
+        regex: p.*
+        action: keep
