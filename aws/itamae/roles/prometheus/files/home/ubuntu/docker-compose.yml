@@ -63,6 +63,15 @@ services:
       - /home/ubuntu/exporter_cloudwatch_system_linux.yml:/etc/cloudwatch_exporter/config.yml
     networks:
       - my_network
+  cloudwatch-exporter-elasticache:
+    image: mizzy/technofy-cloudwatch-exporter:latest
+    container_name: cloudwatch-exporter-elasticache
+    ports:
+      - 9047:9042
+    volumes:
+      - /home/ubuntu/exporter_cloudwatch_elasticache.yml:/etc/cloudwatch_exporter/config.yml
+    networks:
+      - my_network
 
  # grafana:
  #   container_name: grafana

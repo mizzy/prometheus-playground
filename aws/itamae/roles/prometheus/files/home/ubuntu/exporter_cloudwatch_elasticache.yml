@@ -1,0 +1,44 @@
+tasks:
+ - name: elasticache
+   default_region: ap-northeast-1
+   metrics:
+     - aws_namespace: AWS/ElastiCache
+       aws_metric_name: CPUUtilization
+       aws_dimensions: [CacheClusterId]
+       aws_statistics: [Average]
+     - aws_namespace: AWS/ElastiCache
+       aws_metric_name: NetworkBytesIn
+       aws_dimensions: [CacheClusterId]
+       aws_statistics: [Average]
+     - aws_namespace: AWS/ElastiCache
+       aws_metric_name: NetworkBytesOut
+       aws_dimensions: [CacheClusterId]
+       aws_statistics: [Average]
+     - aws_namespace: AWS/ElastiCache
+       aws_metric_name: FreeableMemory
+       aws_dimensions: [CacheClusterId]
+       aws_statistics: [Average]
+     - aws_namespace: AWS/ElastiCache
+       aws_metric_name: BytesUsedForCache
+       aws_dimensions: [CacheClusterId]
+       aws_statistics: [Average]
+     - aws_namespace: AWS/ElastiCache
+       aws_metric_name: CurrConnections
+       aws_dimensions: [CacheClusterId]
+       aws_statistics: [Average]
+     - aws_namespace: AWS/ElastiCache
+       aws_metric_name: NewConnections
+       aws_dimensions: [CacheClusterId]
+       aws_statistics: [Average]
+     - aws_namespace: AWS/ElastiCache
+       aws_metric_name: CacheHits
+       aws_dimensions: [CacheClusterId]
+       aws_statistics: [Average]
+     - aws_namespace: AWS/ElastiCache
+       aws_metric_name: CacheMisses
+       aws_dimensions: [CacheClusterId]
+       aws_statistics: [Average]
+     - aws_namespace: AWS/ElastiCache
+       aws_metric_name: ReplicationLag
+       aws_dimensions: [CacheClusterId]
+       aws_statistics: [Average]

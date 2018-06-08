@@ -60,6 +60,13 @@ scrape_configs:
     static_configs:
       - targets:
           - 'cloudwatch-exporter-es:9042'
+  - job_name: 'cloudwatch-exporter-elasticache'
+    metrics_path: '/scrape'
+    params:
+      task: [elasticache]
+    static_configs:
+      - targets:
+          - 'cloudwatch-exporter-elasticache:9042'
   - job_name: 'cloudwatch-exporter-system_linux'
     metrics_path: '/scrape'
     params:
